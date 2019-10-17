@@ -406,9 +406,6 @@ footer {
     background: #eee;
 }
 
-.form-subscribe {
-}
-
 .form-subscribe__input {
     font-size: 2.2rem;
     font-weight: 800;
@@ -473,10 +470,15 @@ footer {
     display: inline-block;
     width: 100%;
     border: none;
-    border-bottom: 5px solid #555555;
+    border-bottom: 2px solid #555555;
     transition: all .25s ease-in;
     padding: 5px;
     margin: 35px 0 0 0;
+    font-size: 1.6em;
+}
+
+textarea.form-contact__input {
+    resize: none;
 }
 
 .form-contact__input:focus {
@@ -490,12 +492,14 @@ footer {
     left: 0;
     top: 100%;
     transform: translate(0, -100%);
-    padding: 5px 0 15px;
+    padding: 5px 5px 15px;
     transition: all .25s ease-in;
 }
 
-.form-contact__input:focus + .form-contact__label {
+.form-contact__input:focus + .form-contact__label,
+.form-contact__input.filled + .form-contact__label {
     transform: translate(0, 0);
+    z-index: 1;
 }
 
 .row {
@@ -506,31 +510,12 @@ footer {
 .col {
     width: calc(50% - 15px);
     position: relative;  
+    border-bottom: 2px solid #555555;
+    font-size: 0;
 }
 
-.form-message {
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.form-message__input {
-    display: inline;
-    width: 650px;
-    border: none;
-    border-bottom: 5px solid #555555;
-    transition: all .25s ease-in;
-    padding: 5px;
-    margin: 190px 0 0 0;
-}
-
-.form-message__label {
-    font-size: 1.3rem;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    transform: translate(0, -100%);
-    padding: 5px 0 15px;
-    transition: all .25s ease-in;
+.col--lg {
+    width: 100%;
 }
 
 .contact-p {
@@ -538,8 +523,8 @@ footer {
 }
 
 .btn__grey {
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 400;
     color: #fff;
     background-color: #555;
     border: 3px solid #555;
@@ -557,5 +542,6 @@ footer {
 .btn__grey:focus,
 .btn__grey:active {
     color: #555;
-    background-color:transparent;
+    background-color:#fff;
+    text-transform: uppercase;
 }

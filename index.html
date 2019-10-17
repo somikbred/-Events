@@ -178,48 +178,48 @@
                         <div class="user__wrap"><img class="user__img" src="img/pete-bellis-435777-unsplash@2x.png" alt="Pete Bellis"></div>
                         <div class="user__name">Pete Bellis</div>
                         <div class="user__position">Creative Director at Amazing Game</div>
-                    </div>
+                </div>
             </div>
         </section>
         <section class="section">
-                <div class="text-center">
-                        <h2 class="section__title">Contact Us</h2>
-                        <p class="contact-p">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada.</p>
-                    </div>
-                    <form action="" method="POST" name="contact" class="form-contact" autocomplete="off">
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-contact__input" type="text" name="firstname">
-                                <label class="form-contact__label" for="firstname">First Name</label>
-                            </div>
-                            <div class="col">
-                                <input class="form-contact__input" type="text" name="lastname">
-                                <label class="form-contact__label" for="lastname">Last Name</label>
-                            </div>
+                    <div class="container">
+                        <div class="text-center">
+                            <h2 class="section__title">Contact Us</h2>
+                            <p class="contact-p">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada.</p>
                         </div>
-                    </form>
-                    <form action="" method="POST" name="contact" class="form-contact" autocomplete="off">
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-contact__input" type="text" name="email">
-                                <label class="form-contact__label" for="email">Email</label>
+                        <form action="" method="POST" name="contact" class="form-contact" autocomplete="off">
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-contact__input" required type="text" name="firstname">
+                                    <label class="form-contact__label" for="firstname">First Name</label>
+                                </div>
+                                <div class="col">
+                                    <input class="form-contact__input" required type="text" name="lastname">
+                                    <label class="form-contact__label" for="lastname">Last Name</label>
+                                </div>
                             </div>
-                            <div class="col">
-                                <input class="form-contact__input" type="text" name="website">
-                                <label class="form-contact__label" for="website">Website</label>
+                        </form>
+                        <form action="" method="POST" name="contact" class="form-contact" autocomplete="off">
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-contact__input" required type="email" name="email">
+                                    <label class="form-contact__label" for="email">Email</label>
+                                </div>
+                                <div class="col">
+                                    <input class="form-contact__input" required type="url" name="website">
+                                    <label class="form-contact__label" for="website">Website</label>
+                                </div>
                             </div>
+                        </form>
+                            <div class="row">
+                                <div class="col col--lg">
+                                    <textarea class="form-contact__input" required type="message" name="message"></textarea>
+                                    <label class="form-contact__label" for="message">Message</label>
+                                </div>
+                            </div>
+                        <div>
+                            <button type="submit" class="btn__grey">SEND MESSAGE</button>
                         </div>
-                    </form>
-                    <form action="" method="POST" name="contact" class="form-message" autocomplete="off">
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-message__input" type="text" name="message">
-                                <label class="form-message__label" for="message">Message</label>
-                            </div>
-                        </div>
-                    </form>
-                    <div>
-                        <button type="submit" class="btn__grey">SEND MESSAGE</button>
                     </div>
             </section>
     </main>
@@ -240,5 +240,17 @@
         </div>
 </footer>
 <script src="https://kit.fontawesome.com/ddcb2e1583.js" crossorigin="anonymous"></script>
+<script>
+    let inputs = document.querySelectorAll('.form-contact__input');
+
+    inputs.forEach(function(input) {
+        input.addEventListener('change', function() {
+            console.log(this.value);
+            if (this.value.lemght > 0) {
+                this.classList.add('filled');
+            }
+        })
+    });
+</script>
 </body>
 </html>
